@@ -1,7 +1,5 @@
 import { uid } from "uid";
-
 import styled  from "styled-components";
-
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 
 const List = styled.ul`
