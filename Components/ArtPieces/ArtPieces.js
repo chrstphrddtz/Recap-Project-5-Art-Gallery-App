@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import styled  from "styled-components";
 
+import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 
 const ListItem = styled.li`
   list-style: none;
@@ -29,6 +30,8 @@ export default function ArtPieces({pieces}) {
           height={piece.dimensions.height}
           alt={piece.name}
         />
+        <h2>{piece.name}</h2>
+        <h3>{piece.artist}</h3>
       </li>
       ))}
     </ul>
