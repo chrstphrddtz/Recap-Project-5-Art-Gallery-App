@@ -19,16 +19,16 @@ const ListItem = styled.li`
 export default function ArtPieces({pieces}) {
   return (
     <ul>
+      {pieces.map((piece) => (
         <li key={uid}>
-          <Image
-            src={pieces[0].imageSource}
-            width={pieces[0].dimensions.width/10}
-            height={pieces[0].dimensions.height/10}
-            alt={`Artwork`}
-          />
-        </li>
-
-    
+        <Image
+          src={piece.imageSource}
+          width={piece.dimensions.width/10}
+          height={piece.dimensions.height/10}
+          alt={piece.name}
+        />
+      </li>
+      ))}
     </ul>
   )
   
