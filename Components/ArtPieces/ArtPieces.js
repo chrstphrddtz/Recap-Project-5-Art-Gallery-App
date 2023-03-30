@@ -1,41 +1,36 @@
 import { uid } from "uid";
-import Image from "next/image";
-
 import styled  from "styled-components";
-
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 
+const List = styled.ul`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+`
 const ListItem = styled.li`
   list-style: none;
-  display: flex;
-  flex-direction: column;
   align-items: left;
-  width: 100px;
+  width: 50%;
+  margin: 10 auto;
 `;
-
-const StyledImage = styled(Image)`
-box-shadow: var(--box-shadow-book);
-width: 25%;
-height: 20%;
-` 
 
 export default function ArtPieces({pieces}) {
   return (
-    <ul>
+    <List>
       {pieces.map((piece) => (
-        <li key={uid()}>
-        <StyledImage
-          src={piece.imageSource}
+        <ListItem key={uid()}>
+        <ArtPiecePreview 
+          image={piece.imageSource} 
           width={piece.dimensions.width}
           height={piece.dimensions.height}
-          alt={piece.name}
+          title={piece.name} 
+          artist={piece.artist} 
         />
-        <h2>{piece.name}</h2>
-        <h3>{piece.artist}</h3>
-      </li>
+      </ListItem>
       ))}
-    </ul>
-  )
-  
-
+    </List>
+  ) 
 }
