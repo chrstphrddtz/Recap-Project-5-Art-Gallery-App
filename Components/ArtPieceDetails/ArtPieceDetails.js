@@ -13,7 +13,7 @@ const StyledImage = styled(Image)`
 `;
 
 const ButtonContainer = styled.div`
-  margin: auto;
+  margin: 50px auto;
   width: 120px;
   border: 1px solid black;
   border-radius: 10px;
