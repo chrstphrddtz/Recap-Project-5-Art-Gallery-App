@@ -1,4 +1,5 @@
 import { uid } from "uid";
+import Link from "next/link";
 import styled  from "styled-components";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 
@@ -24,14 +25,16 @@ export default function ArtPieces({pieces}) {
     <List>
       {pieces.map((piece) => (
         <ListItem key={uid()}>
-        <ArtPiecePreview 
-          image={piece.imageSource} 
-          width={piece.dimensions.width}
-          height={piece.dimensions.height}
-          title={piece.name} 
-          artist={piece.artist} 
-          alt={piece.name}
-        />
+          <Link href={`/art-pieces/${piece.slug}`}>
+            <ArtPiecePreview 
+              image={piece.imageSource} 
+              width={piece.dimensions.width}
+              height={piece.dimensions.height}
+              alt={piece.name}
+              title={piece.name} 
+              artist={piece.artist} 
+            />
+          </Link>
       </ListItem>
       ))}
     </List>

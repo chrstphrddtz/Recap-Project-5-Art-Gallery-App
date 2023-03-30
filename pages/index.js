@@ -1,10 +1,10 @@
 import Spotlight from "../Components/Spotlight/Spotlight";
 
-export default function SpotlightPage({data}) {
+export default function SpotlightPage({data, onToggleFavourite}) {
 
   return (
     <div>
-      <Spotlight pieces={data} />
+      <Spotlight pieces={data} onToggleFavourite={onToggleFavourite}/>
     </div>
   );
 }
