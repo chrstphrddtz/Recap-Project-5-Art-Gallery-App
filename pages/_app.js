@@ -17,13 +17,10 @@ export default function App({ Component, pageProps }) {
   if (isLoading) return <div>loading...</div>;
 
  
-
-
   function handleToggleFavourite(currentArt) {
     console.log("From App: ", currentArt);
     const newArray = data.map((artPiece) => {
       if(artPiece.slug === currentArt.slug) {
-        console.log("I found you: ", artPiece);
         if(artPiece.isFavourite) {
           artPiece.isFavourite = !artPiece.isFavourite
         } else {
@@ -32,8 +29,6 @@ export default function App({ Component, pageProps }) {
         return artPiece
       }
     })
-
-    console.log("New Array: ", artPiecesInfo);
 
     setArtPiecesInfo(newArray)
   
