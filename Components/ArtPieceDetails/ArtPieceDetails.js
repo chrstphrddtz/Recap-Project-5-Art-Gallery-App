@@ -11,25 +11,13 @@ const StyledImage = styled(Image)`
   height: 40%;
 `;
 
-export default function ArtPieceDetails({
-  image,
-  title,
-  name,
-  artist,
-  year,
-  genre,
-  width,
-  height,
-}) {
+export default function ArtPieceDetails({ image, title, name, artist, year, genre, width, height }) {
   return (
     <Container>
       <StyledImage src={image} width={width} height={height} alt={name} />
       <h2>{title}</h2>
       <h3> {artist}</h3>
-
-      <p>
-        {genre}, {year}
-      </p>
+      <p>{genre} {year}</p>
     </Container>
   );
 }

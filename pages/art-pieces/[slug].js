@@ -2,7 +2,6 @@ import ArtPieceDetails from "../../Components/ArtPieceDetails/ArtPieceDetails";
 import { useRouter } from "next/router";
 
 export default function PiecesPage({ data }) {
-  //console.log(data);
 
   const router = useRouter();
   const { slug } = router.query;
@@ -14,7 +13,6 @@ export default function PiecesPage({ data }) {
   }
 
   const { imageSource, title, artist, genre, year } = piece;
-  console.log(imageSource);
 
   return (
     <ArtPieceDetails
