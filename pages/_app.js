@@ -20,8 +20,9 @@ export default function App({ Component, pageProps }) {
 
 
   function handleToggleFavourite(currentArt) {
+    console.log("From App: ", currentArt);
     const newArray = data.map((artPiece) => {
-      if(artPiece.slug == currentArt.slug) {
+      if(artPiece.slug === currentArt.slug) {
         console.log("I found you: ", artPiece);
         if(artPiece.isFavourite) {
           artPiece.isFavourite = !artPiece.isFavourite
@@ -44,7 +45,7 @@ export default function App({ Component, pageProps }) {
       <SWRConfig>
         <GlobalStyle />
         <Layout />
-        <Component {...pageProps} data={data} onToggleFavourite={handleToggleFavourite} />
+        <Component {...pageProps} data={data} onToggleFavourite={handleToggleFavourite}  />
       </SWRConfig>
     </>
   );

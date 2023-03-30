@@ -2,6 +2,8 @@ import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
 
+import FavouriteButton from "../FavouriteButton/FavouriteButton";
+
 const Container = styled.div`
   margin: 20px;
   text-align: center;
@@ -28,13 +30,14 @@ const StyledLink = styled(Link)`
   
 `
 
-export default function ArtPieceDetails({ image, title, name, artist, year, genre, width, height }) {
+export default function ArtPieceDetails({ image, title, name, artist, year, genre, width, height, onToggleFavourite, isFavourite }) {
   return (
     <Container>
       <StyledImage src={image} width={width} height={height} alt={name} />
       <h2>{title}</h2>
       <h3> {artist}</h3>
       <p>{genre} - {year}</p>
+      <FavouriteButton isFavourite={isFavourite} onToggleFavourite={onToggleFavourite}/>
       <ButtonContainer>
         <StyledLink href={"/art-pieces"}>Go Back</StyledLink>
       </ButtonContainer>

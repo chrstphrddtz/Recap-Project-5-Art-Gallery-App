@@ -1,9 +1,7 @@
-import styled from "styled-components";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 import FavouriteButton from "../FavouriteButton/FavouriteButton"
 
 export default function Spotlight({ pieces, onToggleFavourite }) {
-  console.log("onToggle: ", onToggleFavourite);
   const randomArtwork = Math.floor(Math.random() * pieces.length);
   const object = pieces[randomArtwork];
 
