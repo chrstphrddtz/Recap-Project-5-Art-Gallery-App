@@ -9,7 +9,9 @@ const List = styled.ul`
   align-items: center;
   align-content: center;
   justify-content: center;
+  margin-top: 100px;
 `
+
 const ListItem = styled.li`
   list-style: none;
   align-items: left;
@@ -28,6 +30,7 @@ export default function ArtPieces({pieces}) {
           height={piece.dimensions.height}
           title={piece.name} 
           artist={piece.artist} 
+          alt={piece.name}
         />
       </ListItem>
       ))}
