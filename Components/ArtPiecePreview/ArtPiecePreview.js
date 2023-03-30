@@ -4,6 +4,8 @@ import styled  from "styled-components";
 const Container = styled.div`
   margin: 20px;
   text-align: center;
+  margin-top: 100px;
+
 `
 const StyledImage = styled(Image)`
   width: 40%;

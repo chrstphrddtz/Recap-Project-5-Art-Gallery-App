@@ -9,7 +9,9 @@ const List = styled.ul`
   align-items: center;
   align-content: center;
   justify-content: center;
+  margin-top: 100px;
 `
+
 const ListItem = styled.li`
   list-style: none;
   align-items: left;
