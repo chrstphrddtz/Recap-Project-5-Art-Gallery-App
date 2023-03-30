@@ -32,25 +32,5 @@ export default function ArtPieces({pieces}) {
       </ListItem>
       ))}
     </List>
-  )
-  
+  ) 
 }
-
-
-
-// return (
-//   <ul>
-//     {pieces.map((piece) => (
-//       <ListItem key={uid()}>
-//       <StyledImage
-//         src={piece.imageSource}
-//         width={piece.dimensions.width}
-//         height={piece.dimensions.height}
-//         alt={piece.name}
-//       />
-//       <h2>{piece.name}</h2>
-//       <h3>{piece.artist}</h3>
-//     </ListItem>
-//     ))}
-//   </ul>
-// )

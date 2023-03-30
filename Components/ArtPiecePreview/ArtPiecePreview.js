@@ -2,9 +2,8 @@ import Image from "next/image";
 import styled  from "styled-components";
 
 const Container = styled.div`
-  /* width: 40%; */
   margin: 20px;
-  text-align: center;  
+  text-align: center;
 `
 const StyledImage = styled(Image)`
   width: 40%;
