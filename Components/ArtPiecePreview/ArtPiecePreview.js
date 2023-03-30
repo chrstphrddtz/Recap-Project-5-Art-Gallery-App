@@ -18,14 +18,14 @@ const ArtistTitle = styled.h2`
 
 `
 
-export default function ArtPiecePreview({image, title, artist, width, height}) {
+export default function ArtPiecePreview({image, title, artist, width, height, alt}) {
   return (
     <Container>
       <StyledImage
           src={image}
           width={width}
           height={height}
-          alt={title}
+          alt={alt}
         />
         <h2>{title}</h2>
         <h3>{artist}</h3>

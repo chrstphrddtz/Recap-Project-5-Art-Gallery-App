@@ -28,6 +28,7 @@ export default function ArtPieces({pieces}) {
           height={piece.dimensions.height}
           title={piece.name} 
           artist={piece.artist} 
+          alt={piece.name}
         />
       </ListItem>
       ))}
