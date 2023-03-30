@@ -19,7 +19,6 @@ export default function App({ Component, pageProps }) {
       <SWRConfig>
         <GlobalStyle />
         <Layout />
-        <ArtPieceDetails />
         <Component {...pageProps} data={data} />
       </SWRConfig>
     </>

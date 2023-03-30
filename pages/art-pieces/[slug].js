@@ -12,18 +12,18 @@ export default function PiecesPage({ data }) {
     return null;
   }
 
-  const { imageSource, title, artist, genre, year } = piece;
+  const { imageSource, dimensions, name, title, artist, genre, year } = piece;
 
   return (
     <ArtPieceDetails
       image={imageSource}
-      width={piece.dimensions.width}
-      height={piece.dimensions.height}
-      alt={piece.name}
-      title={piece.name}
-      artist={piece.artist}
-      genre={piece.genre}
-      year={piece.year}
+      width={dimensions.width}
+      height={dimensions.height}
+      alt={name}
+      title={title}
+      artist={artist}
+      genre={genre}
+      year={year}
     />
   );
 }
