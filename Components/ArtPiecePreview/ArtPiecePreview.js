@@ -12,14 +12,6 @@ const StyledImage = styled(Image)`
   height: 40%;
 ` 
 
-const ArtworkTitle = styled.h2`
-
-`
-
-const ArtistTitle = styled.h2`
-
-`
-
 export default function ArtPiecePreview({image, title, artist, width, height, alt}) {
   return (
     <Container>

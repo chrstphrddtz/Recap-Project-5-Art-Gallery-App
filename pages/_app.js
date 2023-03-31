@@ -16,27 +16,24 @@ export default function App({ Component, pageProps }) {
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
 
- 
-
-
   function handleToggleFavourite(currentArt) {
-    const newArray = data.map((artPiece) => {
-      if(artPiece.slug == currentArt.slug) {
-        console.log("I found you: ", artPiece);
-        if(artPiece.isFavourite) {
-          artPiece.isFavourite = !artPiece.isFavourite
-        } else {
-          artPiece.isFavourite = true
-        }
-        return artPiece
+    console.log("currentArt from App: ", currentArt);
+
+    setArtPiecesInfo((artPiecesInfo) => {
+      console.log("artPiecesInfo before find: ", artPiecesInfo);
+      const favourite = artPiecesInfo.find((favourite) => favourite.currentArt === currentArt)
+      console.log("favourite before if", favourite);
+      if(favourite) {
+        return artPiecesInfo.filter((favourite) => {
+          if (favourite.currentArt !== currentArt){
+            return favourite;
+          }
+        })
       }
+      console.log("favourite after if", favourite);
+      return [...artPiecesInfo, {currentArt, isFavourite: true}]
     })
-
-    console.log("New Array: ", artPiecesInfo);
-
-    setArtPiecesInfo(newArray)
-  
-
+    console.log("artPiecesInfo after iteration: ", artPiecesInfo)
   }
 
   return (
@@ -44,7 +41,7 @@ export default function App({ Component, pageProps }) {
       <SWRConfig>
         <GlobalStyle />
         <Layout />
-        <Component {...pageProps} data={data} onToggleFavourite={handleToggleFavourite} />
+        <Component {...pageProps} data={data} onToggleFavourite={handleToggleFavourite}  />
       </SWRConfig>
     </>
   );

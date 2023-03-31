@@ -2,6 +2,7 @@ import { uid } from "uid";
 import Link from "next/link";
 import styled  from "styled-components";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
+import FavouriteButton from "../FavouriteButton/FavouriteButton";
 
 const List = styled.ul`
   display: flex;
@@ -18,9 +19,14 @@ const ListItem = styled.li`
   align-items: left;
   width: 50%;
   margin: 10 auto;
-`;
+`
 
-export default function ArtPieces({pieces}) {
+const ButtonContainer = styled.div`
+  margin: 50px auto;
+  width: 80px;
+`
+
+export default function ArtPieces({pieces, onToggleFavourite}) {
   return (
     <List>
       {pieces.map((piece) => (
@@ -35,6 +41,9 @@ export default function ArtPieces({pieces}) {
               artist={piece.artist} 
             />
           </Link>
+          <ButtonContainer>
+            <FavouriteButton isFavourite={piece.slug} onToggleFavourite={onToggleFavourite}/>
+          </ButtonContainer>
       </ListItem>
       ))}
     </List>
