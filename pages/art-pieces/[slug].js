@@ -13,13 +13,12 @@ export default function PiecesPage({ data, onToggleFavourite }) {
 
   const { imageSource, dimensions, name, title, artist, genre, year } = piece;
   
-  console.log("Piece From Slug: ", piece);
   return (
     <ArtPieceDetails
       image={imageSource}
       width={dimensions.width}
       height={dimensions.height}
-      alt={name}
+      alt={'test'}
       title={title}
       artist={artist}
       genre={genre}

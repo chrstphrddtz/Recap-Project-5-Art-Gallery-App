@@ -16,23 +16,20 @@ export default function App({ Component, pageProps }) {
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
 
- 
   function handleToggleFavourite(currentArt) {
-    console.log("From App: ", currentArt);
-    const newArray = data.map((artPiece) => {
-      if(artPiece.slug === currentArt.slug) {
-        if(artPiece.isFavourite) {
-          artPiece.isFavourite = !artPiece.isFavourite
-        } else {
-          artPiece.isFavourite = true
-        }
-        return artPiece
+    console.log("currentArt from App: ", currentArt);
+
+    setArtPiecesInfo((artPiecesInfo) => {
+      const favourite = artPiecesInfo.find((favourite) => favourite.currentArt === currentArt)
+      console.log("favourite before if", favourite);
+      if(favourite) {
+        return artPiecesInfo.map((favourite) => 
+        favourite.currentArt === currentArt ? {...favourite, isFavourite: !favourite.isFavourite} : favourite)
       }
+      console.log("favourite after if", favourite);
+      return [...artPiecesInfo, {currentArt, isFavourite: true}]
     })
-
-    setArtPiecesInfo(newArray)
-  
-
+    console.log("artPiecesInfo: ", artPiecesInfo)
   }
 
   return (

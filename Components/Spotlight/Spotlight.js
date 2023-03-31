@@ -1,5 +1,11 @@
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 import FavouriteButton from "../FavouriteButton/FavouriteButton"
+import styled from "styled-components";
+
+const ButtonContainer = styled.div`
+  margin: 50px auto;
+  width: 80px;
+`
 
 export default function Spotlight({ pieces, onToggleFavourite }) {
   const randomArtwork = Math.floor(Math.random() * pieces.length);
@@ -11,10 +17,12 @@ export default function Spotlight({ pieces, onToggleFavourite }) {
         image={object.imageSource}
         width={object.dimensions.width}
         height={object.dimensions.height}
-        artist={object.artist}
         alt={object.name}
+        artist={object.artist}
       />
-      <FavouriteButton isFavourite={object} onToggleFavourite={onToggleFavourite} />
+      <ButtonContainer>
+        <FavouriteButton isFavourite={object.slug} onToggleFavourite={onToggleFavourite} />
+      </ButtonContainer>
     </>
   );
 }
