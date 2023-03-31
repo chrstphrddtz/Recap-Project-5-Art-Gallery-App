@@ -20,16 +20,20 @@ export default function App({ Component, pageProps }) {
     console.log("currentArt from App: ", currentArt);
 
     setArtPiecesInfo((artPiecesInfo) => {
+      console.log("artPiecesInfo before find: ", artPiecesInfo);
       const favourite = artPiecesInfo.find((favourite) => favourite.currentArt === currentArt)
       console.log("favourite before if", favourite);
       if(favourite) {
-        return artPiecesInfo.map((favourite) => 
-        favourite.currentArt === currentArt ? {...favourite, isFavourite: !favourite.isFavourite} : favourite)
+        return artPiecesInfo.filter((favourite) => {
+          if (favourite.currentArt !== currentArt){
+            return favourite;
+          }
+        })
       }
       console.log("favourite after if", favourite);
       return [...artPiecesInfo, {currentArt, isFavourite: true}]
     })
-    console.log("artPiecesInfo: ", artPiecesInfo)
+    console.log("artPiecesInfo after iteration: ", artPiecesInfo)
   }
 
   return (
