@@ -1,6 +1,6 @@
 import useSWR, { SWRConfig } from "swr";
 import { useState } from "react";
-// import useLocalStorageState from "use-local-storage-state";
+import useLocalStorageState from "use-local-storage-state";
 // import { useImmerLocalStorageState } from "../../useImmerLocalStorageState";
 
 import GlobalStyle from "../styles";
@@ -9,7 +9,7 @@ import Layout from "../Components/Layout/Layout";
 const url = "https://example-apis.vercel.app/api/art";
 
 export default function App({ Component, pageProps }) {
-  const [artPiecesInfo, setArtPiecesInfo] = useState([]);
+  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState("", { defaultValue: [] });
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(url, fetcher);
