@@ -1,12 +1,12 @@
 import Image from "next/image";
 import styled  from "styled-components";
 
-const Container = styled.div`
+const StyledContainer = styled.div`
   margin: 20px;
   text-align: center;
   margin-top: 100px;
-
 `
+
 const StyledImage = styled(Image)`
   width: 40%;
   height: 40%;
@@ -16,7 +16,7 @@ const StyledImage = styled(Image)`
 
 export default function ArtPiecePreview({image, title, artist, width, height, alt}) {
   return (
-    <Container>
+    <StyledContainer>
       <StyledImage
           src={image}
           width={width}
@@ -25,6 +25,6 @@ export default function ArtPiecePreview({image, title, artist, width, height, al
         />
         <h2>{title}</h2>
         <h3>{artist}</h3>
-    </Container>
+    </StyledContainer>
   )
 }

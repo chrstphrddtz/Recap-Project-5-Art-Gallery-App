@@ -35,6 +35,9 @@ export default function Navigation() {
       </li>
       <li>
         <StyledLink href="/../../art-pieces/">Pieces</StyledLink>
+      </li>   
+      <li>
+        <StyledLink href="/../../favourite/">Favourite</StyledLink>
       </li>    
     </Nav>
   )
