@@ -16,6 +16,7 @@ const StyledButton = styled.button`
 `
 
 export default function FavouriteButton({isFavourite, onToggleFavourite}) {
+  // console.log("isFavourite from FavouriteButton: ", isFavourite);
   return (
     <StyledButton type="button" onClick={()=> onToggleFavourite(isFavourite)}>Like?!</StyledButton>
   )
