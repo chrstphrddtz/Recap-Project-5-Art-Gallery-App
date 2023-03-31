@@ -1,5 +1,7 @@
 import useSWR, { SWRConfig } from "swr";
 import { useState } from "react";
+// import useLocalStorageState from "use-local-storage-state";
+// import { useImmerLocalStorageState } from "../../useImmerLocalStorageState";
 
 import GlobalStyle from "../styles";
 import Layout from "../Components/Layout/Layout";
@@ -7,8 +9,7 @@ import Layout from "../Components/Layout/Layout";
 const url = "https://example-apis.vercel.app/api/art";
 
 export default function App({ Component, pageProps }) {
-
-  const [artPiecesInfo, setArtPiecesInfo] = useState([])
+  const [artPiecesInfo, setArtPiecesInfo] = useState([]);
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(url, fetcher);
@@ -17,23 +18,19 @@ export default function App({ Component, pageProps }) {
   if (isLoading) return <div>loading...</div>;
 
   function handleToggleFavourite(currentArt) {
-    console.log("currentArt from App: ", currentArt);
-
     setArtPiecesInfo((artPiecesInfo) => {
-      console.log("artPiecesInfo before find: ", artPiecesInfo);
-      const favourite = artPiecesInfo.find((favourite) => favourite.currentArt === currentArt)
-      console.log("favourite before if", favourite);
-      if(favourite) {
+      const favourite = artPiecesInfo.find(
+        (favourite) => favourite.currentArt === currentArt
+      );
+      if (favourite) {
         return artPiecesInfo.filter((favourite) => {
-          if (favourite.currentArt !== currentArt){
+          if (favourite.currentArt !== currentArt) {
             return favourite;
           }
-        })
+        });
       }
-      console.log("favourite after if", favourite);
-      return [...artPiecesInfo, {currentArt, isFavourite: true}]
-    })
-    console.log("artPiecesInfo after iteration: ", artPiecesInfo)
+      return [...artPiecesInfo, { currentArt, isFavourite: true }];
+    });
   }
 
   return (
@@ -41,7 +38,12 @@ export default function App({ Component, pageProps }) {
       <SWRConfig>
         <GlobalStyle />
         <Layout />
-        <Component {...pageProps} data={data} onToggleFavourite={handleToggleFavourite}  />
+        <Component
+          {...pageProps}
+          data={data}
+          artPiecesInfo={artPiecesInfo}
+          onToggleFavourite={handleToggleFavourite}
+        />
       </SWRConfig>
     </>
   );

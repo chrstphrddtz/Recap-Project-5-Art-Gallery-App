@@ -18,7 +18,7 @@ export default function PiecesPage({ data, onToggleFavourite }) {
       image={imageSource}
       width={dimensions.width}
       height={dimensions.height}
-      alt={'test'}
+      alt={name}
       title={title}
       artist={artist}
       genre={genre}

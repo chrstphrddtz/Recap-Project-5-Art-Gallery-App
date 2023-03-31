@@ -19,6 +19,7 @@
     "styled-components": "^5.3.9",
     "swr": "^2.1.1",
     "uid": "^2.0.1",
+    "use-local-storage-state": "^18.2.1",
     "zustand": "^4.3.6"
   },
   "devDependencies": {
