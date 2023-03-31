@@ -9,7 +9,7 @@ import Layout from "../Components/Layout/Layout";
 const url = "https://example-apis.vercel.app/api/art";
 
 export default function App({ Component, pageProps }) {
-  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState("", { defaultValue: [] });
+  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState("Local", { defaultValue: [] });
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(url, fetcher);
