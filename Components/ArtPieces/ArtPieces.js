@@ -4,6 +4,8 @@ import styled  from "styled-components";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 import FavouriteButton from "../FavouriteButton/FavouriteButton";
 
+
+
 const List = styled.ul`
   display: flex;
   flex-direction: row;
@@ -13,12 +15,19 @@ const List = styled.ul`
   justify-content: center;
   margin-top: 100px;
 `
+const StyledDisplay = styled.div` 
+  border: 1px solid black;
+  background-color: lavender;
+  border-radius: 10px;
+  width: auto;
+  height: auto;
+  margin: 20px;
+`
 
 const ListItem = styled.li`
   list-style: none;
-  align-items: left;
   width: 50%;
-  margin: 10 auto;
+  margin: 10 20px;
 `
 
 const ButtonContainer = styled.div`
@@ -31,6 +40,7 @@ export default function ArtPieces({pieces, onToggleFavourite}) {
     <List>
       {pieces.map((piece) => (
         <ListItem key={uid()}>
+          <StyledDisplay>
           <Link href={`/art-pieces/${piece.slug}`}>
             <ArtPiecePreview 
               image={piece.imageSource} 
@@ -44,6 +54,7 @@ export default function ArtPieces({pieces, onToggleFavourite}) {
           <ButtonContainer>
             <FavouriteButton isFavourite={piece.slug} onToggleFavourite={onToggleFavourite}/>
           </ButtonContainer>
+          </StyledDisplay>
       </ListItem>
       ))}
     </List>

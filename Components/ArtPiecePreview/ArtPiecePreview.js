@@ -10,6 +10,8 @@ const Container = styled.div`
 const StyledImage = styled(Image)`
   width: 40%;
   height: 40%;
+  border: 1px solid black;
+  border-radius: 10px;
 ` 
 
 export default function ArtPiecePreview({image, title, artist, width, height, alt}) {

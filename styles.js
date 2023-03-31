@@ -10,6 +10,7 @@ export default createGlobalStyle`
   html {
     margin: 0;
     padding: 0;
+    background-color: whitesmoke;
   }
 
   body {
