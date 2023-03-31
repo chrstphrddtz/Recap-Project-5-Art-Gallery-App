@@ -8,7 +8,7 @@ import FavouriteButton from "../FavouriteButton/FavouriteButton";
 
 const List = styled.ul`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   align-content: center;
