@@ -26,7 +26,6 @@ const StyledDisplay = styled.div`
 
 const ListItem = styled.li`
   list-style: none;
-  width: 50%;
   margin: 10 20px;
 `
 
@@ -40,7 +39,6 @@ export default function ArtPieces({pieces, onToggleFavourite}) {
     <List>
       {pieces.map((piece) => (
         <ListItem key={uid()}>
-          <StyledDisplay>
           <Link href={`/art-pieces/${piece.slug}`}>
             <ArtPiecePreview 
               image={piece.imageSource} 
@@ -54,7 +52,6 @@ export default function ArtPieces({pieces, onToggleFavourite}) {
           <ButtonContainer>
             <FavouriteButton isFavourite={piece.slug} onToggleFavourite={onToggleFavourite}/>
           </ButtonContainer>
-          </StyledDisplay>
       </ListItem>
       ))}
     </List>

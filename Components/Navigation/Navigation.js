@@ -20,10 +20,9 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   font-size: 1.5rem;
   color: black;
-  /* border: 1px solid black;
-  padding: 5px;
-  border-radius: 10px; */
-
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 export default function Navigation() {

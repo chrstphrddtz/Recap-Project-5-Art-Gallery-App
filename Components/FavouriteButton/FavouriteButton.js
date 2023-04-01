@@ -12,7 +12,6 @@ const StyledButton = styled.button`
     border: 1.5px solid black;
     background-color: pink;
   }
-
 `
 
 export default function FavouriteButton({isFavourite, onToggleFavourite}) {
