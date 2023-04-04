@@ -34,10 +34,12 @@ const ButtonContainer = styled.div`
   width: 80px;
 `
 
-export default function ArtPieces({pieces, onToggleFavourite}) {
+export default function ArtPieces({artPieces, onToggleFavourite}) {
+  console.log("data from ArtPieces", artPieces);
+
   return (
     <List>
-      {pieces.map((piece) => (
+      {artPieces.map((piece) => (
         <ListItem key={uid()}>
           <Link href={`/art-pieces/${piece.slug}`}>
             <ArtPiecePreview 

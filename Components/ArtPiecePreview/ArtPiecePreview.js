@@ -28,14 +28,19 @@ const ArtistDisplay = styled.div`
 `
 
 const StyledH2 = styled.h2`
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 5px 0;
 `
 
 const StyledH3 = styled.h3`
-
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 5px 0;
 `
 
 export default function ArtPiecePreview({image, title, artist, width, height, alt}) {
+
   return (
     <StyledContainer>
       <StyledImage
@@ -46,7 +51,7 @@ export default function ArtPiecePreview({image, title, artist, width, height, al
         />
         <ArtistDisplay>
           <StyledH2>{title}</StyledH2>
-          <h3>{artist}</h3>
+          <StyledH3>{artist}</StyledH3>
         </ArtistDisplay>
     </StyledContainer>
   )

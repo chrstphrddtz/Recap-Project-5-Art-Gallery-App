@@ -7,9 +7,10 @@ const ButtonContainer = styled.div`
   width: 80px;
 `
 
-export default function Spotlight({ pieces, onToggleFavourite }) {
-  const randomArtwork = Math.floor(Math.random() * pieces.length);
-  const object = pieces[randomArtwork];
+export default function Spotlight({ artPieces, onToggleFavourite }) {
+  console.log("data from Spotlight", artPieces);
+  const randomArtwork = Math.floor(Math.random() * artPieces.length);
+  const object = artPieces[randomArtwork];
 
   return (
     <>

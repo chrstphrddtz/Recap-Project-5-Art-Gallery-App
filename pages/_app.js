@@ -1,20 +1,15 @@
-import useSWR, { SWRConfig } from "swr";
-// import { useState } from "react";
+import { SWRConfig } from "swr";
 import useLocalStorageState from "use-local-storage-state";
-
 import useArtPieces from "../resources/lib/hook/useArtPieces";
 
 import GlobalStyle from "../styles";
 import Layout from "../Components/Layout/Layout";
 
-const url = "https://example-apis.vercel.app/api/art";
-
 export default function App({ Component, pageProps }) {
   const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState("Local", { defaultValue: [] });
 
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading } = useSWR(url, fetcher);
-  console.log(data);
+  const { artPieces, error, isLoading } = useArtPieces();
+  console.log("Data from _app", artPieces);
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
@@ -42,7 +37,7 @@ export default function App({ Component, pageProps }) {
         <Layout />
         <Component
           {...pageProps}
-          data={data}
+          artPieces={artPieces}
           artPiecesInfo={artPiecesInfo}
           onToggleFavourite={handleToggleFavourite}
         />

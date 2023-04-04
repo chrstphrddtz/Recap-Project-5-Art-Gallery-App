@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
-import Spotlight from "./Spotlight";
 
 test("Art piece's image is displayed", () => {
   render(<ArtPiecePreview />);

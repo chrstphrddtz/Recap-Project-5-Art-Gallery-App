@@ -1,7 +1,8 @@
 import ArtPieces from "../../Components/ArtPieces/ArtPieces";
 
-export default function ArtPiecesIndex({data, onToggleFavourite}) {
+export default function ArtPiecesIndex({artPieces, onToggleFavourite}) {
+
   return (
-    <ArtPieces pieces={data} onToggleFavourite={onToggleFavourite} />
+    <ArtPieces artPieces={artPieces} onToggleFavourite={onToggleFavourite} />
   )
 }

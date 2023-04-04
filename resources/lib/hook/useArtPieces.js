@@ -7,7 +7,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function useArtPieces() {
 
-  const { data, error, isLoading } = useSWR(url, fetcher);
+  const { data, error } = useSWR(url, fetcher);
 
   return{
     artPieces: data,
