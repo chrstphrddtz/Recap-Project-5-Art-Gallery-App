@@ -6,7 +6,9 @@ const StyledContainer = styled.div`
   gap: 20px;
   margin: 20px;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 80px;
+  width: 80%;
+  height: 80%;
 `
 
 const StyledImage = styled(Image)`

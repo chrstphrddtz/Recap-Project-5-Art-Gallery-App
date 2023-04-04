@@ -13,7 +13,7 @@ const List = styled.ul`
   align-items: center;
   align-content: center;
   justify-content: center;
-  margin-top: 100px;
+  /* margin-top: 100px; */
 `
 const StyledDisplay = styled.div` 
   border: 1px solid black;

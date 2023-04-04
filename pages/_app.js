@@ -2,6 +2,8 @@ import useSWR, { SWRConfig } from "swr";
 // import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 
+import useArtPieces from "../resources/lib/hook/useArtPieces";
+
 import GlobalStyle from "../styles";
 import Layout from "../Components/Layout/Layout";
 
@@ -12,6 +14,7 @@ export default function App({ Component, pageProps }) {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(url, fetcher);
+  console.log(data);
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;

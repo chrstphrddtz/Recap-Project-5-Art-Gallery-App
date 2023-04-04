@@ -7,6 +7,8 @@ import FavouriteButton from "../FavouriteButton/FavouriteButton";
 const StyledContainer = styled.div`
   margin: 80px 20px;
   text-align: left;
+  width: 80%;
+  height: 80%;
 `
 
 const StyledArtDisplay = styled.div`
@@ -70,7 +72,6 @@ export default function ArtPieceDetails({ image, alt, artist, year, genre, width
       <Link href={"/art-pieces"}>
         <StyledBackButton type="button"> ← </StyledBackButton>
       </Link>
-      
       <StyledArtDisplay>
         <StyledImage 
           src={image} 
@@ -78,16 +79,13 @@ export default function ArtPieceDetails({ image, alt, artist, year, genre, width
           height={height} 
           alt={alt}
         />
-      
-      <StyledArtistDisplay>
-        <StyledH2> {alt} </StyledH2>
-        <StyledH3> {artist} </StyledH3>
-        <StyledParagraph>{genre} - {year}</StyledParagraph>
-      </StyledArtistDisplay>
-    
+        <StyledArtistDisplay>
+          <StyledH2> {alt} </StyledH2>
+          <StyledH3> {artist} </StyledH3>
+          <StyledParagraph>{genre} - {year}</StyledParagraph>
+        </StyledArtistDisplay>
       </StyledArtDisplay>
       <FavouriteButton isFavourite={isFavourite.slug} onToggleFavourite={onToggleFavourite}/>
-    
     </StyledContainer>
   );
 }
